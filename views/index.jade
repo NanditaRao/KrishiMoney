@@ -1,7 +1,9 @@
-extends layout
-
-block content
-	#login-container
+html
+	head
+		title= title
+	body
+		link(rel='stylesheet', href='/stylesheets/style.css')
+		#login-container
 		form( method="post")#login-form.well.span4
 			h1 Welcome
 			p.subheading Please Login To Your Account
