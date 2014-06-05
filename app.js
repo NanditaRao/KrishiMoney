@@ -8,12 +8,31 @@ var routes = require('./routes');
 var user = require('./routes/user');
 var http = require('http');
 var path = require('path');
-
 var mongo = require('mongodb');
 var monk = require('monk');
 var db = monk('localhost:27017/nodetest1');
-
 var app = express();
+
+//Installing mysql - type npm install mysql
+var mysql = require('mysql');
+
+//creating connection to mysql using credentials
+var connection = mysql.createConnection({
+  host     : 'localhost',
+  user     : 'me',
+  password : 'secret'
+});
+connection.connect(function(err){
+});
+
+// posting to db and querying for example - check console
+var post  = {id: 1, title: 'Hello MySQL'};
+var query = connection.query('INSERT INTO posts SET ?', post, function(err, result) {
+  // Neat!
+});
+console.log(query.sql); // INSERT INTO posts SET `id` = 1, `title` = 'Hello MySQL'
+connection.end();
+
 
 // all environments
 app.set('port', process.env.PORT || 3000);
