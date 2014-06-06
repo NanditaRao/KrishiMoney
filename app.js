@@ -1,6 +1,7 @@
 
 /**
- * Module dependencies.
+ * Module dependencies
+ * Copyright (c) 2014 Nandita Rao & Kuber Kaul
  */
 
 var express = require('express');
@@ -13,25 +14,6 @@ var monk = require('monk');
 var db = monk('localhost:27017/nodetest1');
 var app = express();
 
-//Installing mysql - type npm install mysql
-var mysql = require('mysql');
-
-//creating connection to mysql using credentials
-var connection = mysql.createConnection({
-  host     : 'localhost',
-  user     : 'me',
-  password : 'secret'
-});
-connection.connect(function(err){
-});
-
-// posting to db and querying for example - check console
-var post  = {id: 1, title: 'Hello MySQL'};
-var query = connection.query('INSERT INTO posts SET ?', post, function(err, result) {
-  // Neat!
-});
-console.log(query.sql); // INSERT INTO posts SET `id` = 1, `title` = 'Hello MySQL'
-connection.end();
 
 
 // all environments
@@ -52,6 +34,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 if ('development' == app.get('env')) {
   app.use(express.errorHandler());
 }
+
+require ('./app/server/router')(app);
 
 app.get('/', routes.index);
 app.get('/users', user.list);
