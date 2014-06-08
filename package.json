@@ -1,7 +1,7 @@
 {
-	"name": "node-login",
+	"name": “KrishiMoney”,
 	"version": "1.3.2",
-	"description": "A template for quickly building login systems on top of Node.js & MongoDb",
+	"description": “Automating project report creation”,
 	"author": {
 		"name": "Kuber Kaul, Nandita Rao",
 		"email": "kk2872@columbia.edu, nr2446@columbia.edu"

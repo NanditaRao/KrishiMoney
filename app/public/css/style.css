@@ -3,7 +3,7 @@ body {
   padding: 0;
   height: 100%;
   background: #f2f9fe;
-  background-image: url("Image.jpg");
+  background-image: url("../img/Image.jpg");
   background: -moz-radial-gradient(center, ellipse cover, #f2f9fe 0%, #d6f0fd 100%);
 /* FF3.6+ */
   background: -o-radial-gradient(center, ellipse cover, #f2f9fe 0%, #d6f0fd 100%);
