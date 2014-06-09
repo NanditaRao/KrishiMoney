@@ -144,6 +144,7 @@ exports.delAllRecords = function(callback)
 	accounts.remove({}, callback); // reset accounts collection for testing //
 }
 
+
 /* private encryption & validation methods */
 
 var generateSalt = function()

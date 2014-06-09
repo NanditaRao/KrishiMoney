@@ -155,9 +155,18 @@ module.exports = function(app) {
 			}
 		})
 	});
+
+	//Admin page console
+	app.get('/admin', function(req, res){
+			res.render('admin_login', {title : 'Admin Page'});
+		});
+		
+	app.get('/admin/console', function(req,res){
+		res.send('This is where the UI for inserting stuff into DB will go using twitter bootstrap');
+	});
+
 	
-// view & delete accounts //
-	
+	// view & delete accounts //
 	app.get('/print', function(req, res) {
 		AM.getAllRecords( function(e, accounts){
 			res.render('print', { title : 'Account List', accts : accounts });

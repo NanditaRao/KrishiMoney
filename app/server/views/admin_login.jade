@@ -1,0 +1,15 @@
+
+extends layout
+
+block content
+	#login-container
+		form( method="post").text-info
+			h1  Admin-Console
+		label Admin-Name 
+		input(type="text", name="user", id='user-tf').span4.required
+		label Admin-Password
+		input(type="password", name="pass", id='pass-tf').span4.required
+		button(type="submit")#btn-login.btn.btn-primary
+			i.icon-lock.icon-white
+			| Log In
+		div.clear-fix
