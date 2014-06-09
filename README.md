@@ -14,3 +14,4 @@ Dependencies:
 
 1. npm install mysql
 2. npm install nodemon
+3. npm install debug
