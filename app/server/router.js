@@ -1,4 +1,3 @@
-
 var CT = require('./modules/country-list');
 var AM = require('./modules/account-manager');
 var EM = require('./modules/email-dispatcher');
@@ -158,7 +157,10 @@ module.exports = function(app) {
 
 	//Admin page console
 	app.get('/admin', function(req, res){
-			res.render('admin_login', {title : 'Admin Page'});
+		var admin_username = 'admin'
+		var admin_password = 'nansat'
+		if (req.session.user == null && req.session.pass == null) res.redirect('404');
+		(res.render('admin_login', {title : 'Admin Page'}));
 		});
 		
 	app.get('/admin/console', function(req,res){
@@ -168,6 +170,7 @@ module.exports = function(app) {
 	
 	// view & delete accounts //
 	app.get('/print', function(req, res) {
+		if (req.session.user == null) res.redirect('/');
 		AM.getAllRecords( function(e, accounts){
 			res.render('print', { title : 'Account List', accts : accounts });
 		})
