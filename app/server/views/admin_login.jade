@@ -5,11 +5,21 @@ block content
 	#login-container
 		form( method="post").text-info
 			h1  Admin-Console
-		label Admin-Name 
+		label Admin-Name
 		input(type="text", name="user", id='user-tf').span4.required
 		label Admin-Password
 		input(type="password", name="pass", id='pass-tf').span4.required
 		button(type="submit")#btn-login.btn.btn-primary
 			i.icon-lock.icon-white
 			| Log In
-		div.clear-fix
+
+
+block scripts
+	script(src='/vendor/jquery.min.js')
+	script(src='/vendor/jquery.form.js')
+	script(src='/vendor/bootstrap-modal.js')
+	script(src='/vendor/bootstrap-transition.js')
+	script(src='/js/views/admin_login.js')
+	script(src='/js/controllers/loginController.js')
+	script(src='/js/form-validators/loginValidator.js')
+	script(src='/js/form-validators/emailValidator.js')

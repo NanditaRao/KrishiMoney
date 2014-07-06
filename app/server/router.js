@@ -167,8 +167,9 @@ module.exports = function(app) {
 		else res.render('404');
 		});
 
-	app.get('/admin/console', function(req,res){
-		res.send('This is where the UI for inserting stuff into DB will go using twitter bootstrap');
+	app.post('/admin', function(req,res){
+		if (req.session.user['user'] != "satish396@gmail.com" && req.session.user['email'] != "satish396@gmail.com") res.redirect('404');
+		else res.send('ok', 200);
 	});
 
 
