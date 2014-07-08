@@ -10,9 +10,10 @@ block content
 				button#btn-logout.btn.btn-primary
 					i.icon-lock.icon-white
 					| Sign Out
-				button#btn-admin.btn.btn-danger
-					i.icon-.icon-briefcase
-					| Admin Page
+				if(isAdmin)
+					button#btn-admin.btn.btn-danger
+						i.icon-.icon-briefcase
+						| Admin Page
 
 	include account
 	include modals/alert

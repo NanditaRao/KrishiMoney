@@ -40,7 +40,19 @@ module.exports = function(app) {
 
 // logged-in user homepage //
 
+
 	app.get('/home', function(req, res) {
+
+		function checkIfAdmin()
+		{
+			var admin_username = 'satish396@gmail.com'
+			var admin_email = 'satish396@gmail.com'
+			if (req.session.user['user'] == admin_username && req.session.user['email'] == admin_email)
+				return true;
+			else
+				return false;
+		}
+		
 	    if (req.session.user == null){
 	// if user is not logged-in redirect back to login page //
 	        res.redirect('/');
@@ -48,7 +60,8 @@ module.exports = function(app) {
 			res.render('home', {
 				title : 'Control Panel',
 				countries : CT,
-				udata : req.session.user
+				udata : req.session.user,
+				isAdmin : checkIfAdmin()
 			});
 	    }
 	});
