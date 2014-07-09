@@ -40,20 +40,19 @@ module.exports = function(app) {
 
 // logged-in user homepage //
 
+	function checkIfAdmin(req)
+	{
+		var admin_username = 'satish396@gmail.com'
+		var admin_email = 'satish396@gmail.com'
+		if (req.session.user['user'] == admin_username && req.session.user['email'] == admin_email)
+			return true;
+		else
+			return false;
+	}
 
 	app.get('/home', function(req, res) {
 
-		function checkIfAdmin()
-		{
-			var admin_username = 'satish396@gmail.com'
-			var admin_email = 'satish396@gmail.com'
-			if (req.session.user['user'] == admin_username && req.session.user['email'] == admin_email)
-				return true;
-			else
-				return false;
-		}
-
-	    if (req.session.user == null){
+		 if (req.session.user == null){
 	// if user is not logged-in redirect back to login page //
 	        res.redirect('/');
 	    }   else{
@@ -61,7 +60,7 @@ module.exports = function(app) {
 				title : 'Control Panel',
 				countries : CT,
 				udata : req.session.user,
-				isAdmin : checkIfAdmin()
+				isAdmin : checkIfAdmin(req)
 			});
 	    }
 	});
@@ -170,11 +169,19 @@ module.exports = function(app) {
 
 	//Admin page console
 	app.get('/admin', function(req, res){
+		if(checkIfAdmin(req))
+		{
 		res.render('admin_login', {title : 'Admin Page'});
+		}
+		else
+		{
+			res.redirect('404');
+		}
+
 			});
 
 	app.post('/admin', function(req,res){
-		if (req.session.user['user'] != "satish396@gmail.com" && req.session.user['email'] != "satish396@gmail.com") res.redirect('404');
+		if (!checkIfAdmin(req)) res.redirect('404');
 		else res.send('ok', 200);
 	});
 
