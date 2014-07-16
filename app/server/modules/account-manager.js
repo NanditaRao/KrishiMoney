@@ -6,7 +6,7 @@ var moment 		= require('moment');
 
 var dbPort 		= 27017;
 var dbHost 		= 'localhost';
-var dbName 		= 'node-login';
+var dbName 		= 'krishimoney';
 
 /* establish the database connection */
 
@@ -73,6 +73,13 @@ exports.addNewAccount = function(newData, callback)
 		}
 	});
 }
+
+// exports.cultivation = function(newData, callback
+// {
+// 	accounts.findOne({user:newData.user}, function(e,o)){
+		
+// 	}
+// })
 
 exports.updateAccount = function(newData, callback)
 {
