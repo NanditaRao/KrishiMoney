@@ -19,6 +19,10 @@ var db = new MongoDB(dbName, new Server(dbHost, dbPort, {auto_reconnect: true}),
 	}
 });
 var accounts = db.collection('accounts');
+var admin_cultivation = db.collection('admin_cultivation')
+var irrigation = db.collection('irrigation')
+var plantProtection = db.collection('plantProtection') 
+var ManureAndFertilizers = db.collection('ManureAndFertilizers')
 
 /* login validation methods */
 
@@ -73,13 +77,6 @@ exports.addNewAccount = function(newData, callback)
 		}
 	});
 }
-
-// exports.cultivation = function(newData, callback
-// {
-// 	accounts.findOne({user:newData.user}, function(e,o)){
-		
-// 	}
-// })
 
 exports.updateAccount = function(newData, callback)
 {
@@ -208,3 +205,34 @@ var findByMultipleFields = function(a, callback)
 		else callback(null, results)
 	});
 }
+
+//Including the new collection here for admin access.
+
+exports.cultivation = function(newData, callback)
+{
+// this is the table to store the cultivation column in the admin page for crop specification
+	cultivation.findOne({user:user}, function(e, o){
+		if (o==null){
+			cultivation.insert({}
+			)}
+		else{
+			callback('record not found for user');
+		}
+		});
+}
+
+exports.irrigation= function(newData, callback)
+{
+// this is the table to store the irrigation column in the admin page from the crop specification
+}
+
+exports.plantProtection = function(newData, callback)
+{
+//this is the table to store the plant protection column in the admin page from the crop specification
+}
+
+exports.ManureAndFertilizers = function(newData, callback)
+{
+//this is the table to store the manure and fertilizers column in the admin page from the crop specification 
+}
+
