@@ -2,16 +2,586 @@
 extends layout
 
 block content
-	#login-container
-		form( method="post").text-info
-			h1  Crop Specification Per Acre - Name of the Crop
-		label Admin-Name
-		input(type="text", name="user", id='user-tf').span4.required
-		label Admin-Password
-		input(type="password", name="pass", id='pass-tf').span4.required
-		button(type="submit")#btn-login.btn.btn-primary
-			i.icon-lock.icon-white
-			| Log In
+		head
+			title #{title}
+			link(rel='stylesheet', href='/vendor/bootstrap.min.css')
+			link(rel='stylesheet', href='/css/style1.css')
+		body
+			form( method="post").text-info
+				h1  Crop Specification Per Acre - Name of the Crop
+				hr
+				h2 Cultivation
+				hr
+				div
+					label Type
+					input(type="text").span4.required
+				div
+					label Life of Trees
+					input(type="text").span4.required
+				div 
+					label Gestation / Growth / Development Period
+					input(type="text").span4.required
+				div 
+					label Varieties
+					input(type="text").span4.required
+				div 
+					label Recommended Planting Season
+					input(type="text").span4.required
+				h2 Irrigation
+				hr
+				div
+					label Irrigation System
+					input(type="text").span4.required
+				div
+					label Irrigation Per Plant
+					input(type="text").span4.required
+				div 
+					label Irrigation Per Acre Per Day
+					input(type="text").span4.required
+				div 
+					label Discharge Per Day
+					input(type="text").span4.required
+				h2 Plant Protection
+				hr
+				div
+					label Pests
+					input(type="text").span4.required
+				div
+					label Diseases
+					input(type="text").span4.required
+				h2 Planting Specifications
+				hr
+				div
+					label Spacing
+					input(type="text").span4.required
+				div
+					label Plant population per Acre
+					input(type="text").span4.required
+				div 
+					label Pit Size
+					input(type="text").span4.required
+				hr
+				div
+					table(border = '2')
+						tr
+							th Prices Per Kg in the last 3 Years
+							th 1
+							th 2
+							th 3
+						tr
+							td Rs.
+							td 
+								input(type="text").span4.required
+							td 
+								input(type="text").span4.required
+							td 
+								input(type="text").span4.required
+				hr
+				div
+					h2 Manure and Fertilisers Grams/Plant
+					table(border = '2')
+						tr
+							th 
+							th Years
+						tr
+							td 
+							td 1
+							td 2
+							td 3
+							td 4
+							td 5
+							td 6
+							td 7
+							td 8
+							td 9
+							td 10
+							td 11
+							td 12
+						tr
+							td Neem cake - Kgs per Plant
+							td 
+								input(type="text").span4.required
+							td 
+								input(type="text").span4.required 
+							td 
+								input(type="text").span4.required
+							td 
+								input(type="text").span4.required
+							td 
+								input(type="text").span4.required
+							td 
+								input(type="text").span4.required 
+							td 
+								input(type="text").span4.required 
+							td 
+								input(type="text").span4.required 
+							td 
+								input(type="text").span4.required 
+							td 
+								input(type="text").span4.required 
+							td 
+								input(type="text").span4.required 
+							td 
+								input(type="text").span4.required 
+						tr
+							td Nitrogen - Grams per Plant
+							td 
+								input(type="text").span4.required 
+							td 
+								input(type="text").span4.required 
+							td 
+								input(type="text").span4.required 
+							td 
+								input(type="text").span4.required 
+							td 
+								input(type="text").span4.required 
+							td 
+								input(type="text").span4.required 
+							td 
+								input(type="text").span4.required 
+							td 
+								input(type="text").span4.required 
+							td 
+								input(type="text").span4.required 
+							td 
+								input(type="text").span4.required
+							td 
+								input(type="text").span4.required 
+							td 
+								input(type="text").span4.required 
+						tr
+							td Phosphorous - Grams per Plant
+							td 
+								input(type="text").span4.required 
+							td 
+								input(type="text").span4.required 
+							td 
+								input(type="text").span4.required 
+							td 
+								input(type="text").span4.required 
+							td 
+								input(type="text").span4.required 
+							td 
+								input(type="text").span4.required 
+							td 
+								input(type="text").span4.required 
+							td 
+								input(type="text").span4.required 
+							td 
+								input(type="text").span4.required 
+							td 
+								input(type="text").span4.required 
+							td 
+								input(type="text").span4.required
+							td 
+								input(type="text").span4.required
+						tr
+							td Pottasium - Grams per Plant
+							td 
+								input(type="text").span4.required 
+							td 
+								input(type="text").span4.required 
+							td 
+								input(type="text").span4.required 
+							td 
+								input(type="text").span4.required 
+							td 
+								input(type="text").span4.required 
+							td 
+								input(type="text").span4.required 
+							td 
+								input(type="text").span4.required
+							td 
+								input(type="text").span4.required 
+							td 
+								input(type="text").span4.required
+							td 
+								input(type="text").span4.required 
+							td 
+								input(type="text").span4.required 
+							td 
+								input(type="text").span4.required 
+				hr
+				div
+					h2 Labour in Mandays
+					table(border = '2')
+						tr
+							td Planting
+							td 
+								input(type="text").span4.required
+							td 
+								input(type="text").span4.required 
+							td 
+								input(type="text").span4.required
+							td 
+								input(type="text").span4.required
+							td 
+								input(type="text").span4.required
+							td 
+								input(type="text").span4.required 
+							td 
+								input(type="text").span4.required 
+							td 
+								input(type="text").span4.required 
+							td 
+								input(type="text").span4.required 
+							td 
+								input(type="text").span4.required 
+							td 
+								input(type="text").span4.required 
+							td 
+								input(type="text").span4.required 
+						tr
+							td Training / Pruning
+							td 
+								input(type="text").span4.required 
+							td 
+								input(type="text").span4.required 
+							td 
+								input(type="text").span4.required 
+							td 
+								input(type="text").span4.required 
+							td 
+								input(type="text").span4.required 
+							td 
+								input(type="text").span4.required 
+							td 
+								input(type="text").span4.required 
+							td 
+								input(type="text").span4.required 
+							td 
+								input(type="text").span4.required 
+							td 
+								input(type="text").span4.required
+							td 
+								input(type="text").span4.required 
+							td 
+								input(type="text").span4.required 
+						tr
+							td Staking
+							td 
+								input(type="text").span4.required 
+							td 
+								input(type="text").span4.required 
+							td 
+								input(type="text").span4.required 
+							td 
+								input(type="text").span4.required 
+							td 
+								input(type="text").span4.required 
+							td 
+								input(type="text").span4.required 
+							td 
+								input(type="text").span4.required 
+							td 
+								input(type="text").span4.required 
+							td 
+								input(type="text").span4.required 
+							td 
+								input(type="text").span4.required 
+							td 
+								input(type="text").span4.required
+							td 
+								input(type="text").span4.required
+						tr
+							td Weeding
+							td 
+								input(type="text").span4.required 
+							td 
+								input(type="text").span4.required 
+							td 
+								input(type="text").span4.required 
+							td 
+								input(type="text").span4.required 
+							td 
+								input(type="text").span4.required 
+							td 
+								input(type="text").span4.required 
+							td 
+								input(type="text").span4.required
+							td 
+								input(type="text").span4.required 
+							td 
+								input(type="text").span4.required
+							td 
+								input(type="text").span4.required 
+							td 
+								input(type="text").span4.required 
+							td 
+								input(type="text").span4.required
+						tr
+							td Interculture
+							td 
+								input(type="text").span4.required 
+							td 
+								input(type="text").span4.required 
+							td 
+								input(type="text").span4.required 
+							td 
+								input(type="text").span4.required 
+							td 
+								input(type="text").span4.required 
+							td 
+								input(type="text").span4.required 
+							td 
+								input(type="text").span4.required
+							td 
+								input(type="text").span4.required 
+							td 
+								input(type="text").span4.required
+							td 
+								input(type="text").span4.required 
+							td 
+								input(type="text").span4.required 
+							td 
+								input(type="text").span4.required
+						tr
+							td Nutrient Application
+							td 
+								input(type="text").span4.required 
+							td 
+								input(type="text").span4.required 
+							td 
+								input(type="text").span4.required 
+							td 
+								input(type="text").span4.required 
+							td 
+								input(type="text").span4.required 
+							td 
+								input(type="text").span4.required 
+							td 
+								input(type="text").span4.required
+							td 
+								input(type="text").span4.required 
+							td 
+								input(type="text").span4.required
+							td 
+								input(type="text").span4.required 
+							td 
+								input(type="text").span4.required 
+							td 
+								input(type="text").span4.required
+						tr
+							td Irrigation Management
+							td 
+								input(type="text").span4.required 
+							td 
+								input(type="text").span4.required 
+							td 
+								input(type="text").span4.required 
+							td 
+								input(type="text").span4.required 
+							td 
+								input(type="text").span4.required 
+							td 
+								input(type="text").span4.required 
+							td 
+								input(type="text").span4.required
+							td 
+								input(type="text").span4.required 
+							td 
+								input(type="text").span4.required
+							td 
+								input(type="text").span4.required 
+							td 
+								input(type="text").span4.required 
+							td 
+								input(type="text").span4.required
+						tr
+							td Plant Protection
+							td 
+								input(type="text").span4.required 
+							td 
+								input(type="text").span4.required 
+							td 
+								input(type="text").span4.required 
+							td 
+								input(type="text").span4.required 
+							td 
+								input(type="text").span4.required 
+							td 
+								input(type="text").span4.required 
+							td 
+								input(type="text").span4.required
+							td 
+								input(type="text").span4.required 
+							td 
+								input(type="text").span4.required
+							td 
+								input(type="text").span4.required 
+							td 
+								input(type="text").span4.required 
+							td 
+								input(type="text").span4.required
+						tr
+							td Harvest
+							td 
+								input(type="text").span4.required 
+							td 
+								input(type="text").span4.required 
+							td 
+								input(type="text").span4.required 
+							td 
+								input(type="text").span4.required 
+							td 
+								input(type="text").span4.required 
+							td 
+								input(type="text").span4.required 
+							td 
+								input(type="text").span4.required
+							td 
+								input(type="text").span4.required 
+							td 
+								input(type="text").span4.required
+							td 
+								input(type="text").span4.required 
+							td 
+								input(type="text").span4.required 
+							td 
+								input(type="text").span4.required
+						tr
+							td General and Miscellaneous
+							td 
+								input(type="text").span4.required 
+							td 
+								input(type="text").span4.required 
+							td 
+								input(type="text").span4.required 
+							td 
+								input(type="text").span4.required 
+							td 
+								input(type="text").span4.required 
+							td 
+								input(type="text").span4.required 
+							td 
+								input(type="text").span4.required
+							td 
+								input(type="text").span4.required 
+							td 
+								input(type="text").span4.required
+							td 
+								input(type="text").span4.required 
+							td 
+								input(type="text").span4.required 
+							td 
+								input(type="text").span4.required
+				hr
+				div
+					h2 Plant Protection No. of Sprays
+					table(border = '2')
+						tr
+							td Pest Control
+							td 
+								input(type="text").span4.required
+							td 
+								input(type="text").span4.required 
+							td 
+								input(type="text").span4.required
+							td 
+								input(type="text").span4.required
+							td 
+								input(type="text").span4.required
+							td 
+								input(type="text").span4.required 
+							td 
+								input(type="text").span4.required 
+							td 
+								input(type="text").span4.required 
+							td 
+								input(type="text").span4.required 
+							td 
+								input(type="text").span4.required 
+							td 
+								input(type="text").span4.required 
+							td 
+								input(type="text").span4.required 
+						tr
+							td Disease Control
+							td 
+								input(type="text").span4.required 
+							td 
+								input(type="text").span4.required 
+							td 
+								input(type="text").span4.required 
+							td 
+								input(type="text").span4.required 
+							td 
+								input(type="text").span4.required 
+							td 
+								input(type="text").span4.required 
+							td 
+								input(type="text").span4.required 
+							td 
+								input(type="text").span4.required 
+							td 
+								input(type="text").span4.required 
+							td 
+								input(type="text").span4.required
+							td 
+								input(type="text").span4.required 
+							td 
+								input(type="text").span4.required 
+						tr
+							td Micro-Nutrients
+							td 
+								input(type="text").span4.required 
+							td 
+								input(type="text").span4.required 
+							td 
+								input(type="text").span4.required 
+							td 
+								input(type="text").span4.required 
+							td 
+								input(type="text").span4.required 
+							td 
+								input(type="text").span4.required 
+							td 
+								input(type="text").span4.required 
+							td 
+								input(type="text").span4.required 
+							td 
+								input(type="text").span4.required 
+							td 
+								input(type="text").span4.required 
+							td 
+								input(type="text").span4.required
+							td 
+								input(type="text").span4.required
+						tr
+							td Hormone Management
+							td 
+								input(type="text").span4.required 
+							td 
+								input(type="text").span4.required 
+							td 
+								input(type="text").span4.required 
+							td 
+								input(type="text").span4.required 
+							td 
+								input(type="text").span4.required 
+							td 
+								input(type="text").span4.required 
+							td 
+								input(type="text").span4.required
+							td 
+								input(type="text").span4.required 
+							td 
+								input(type="text").span4.required
+							td 
+								input(type="text").span4.required 
+							td 
+								input(type="text").span4.required 
+							td 
+								input(type="text").span4.required
+				hr
+				div
+					label Harvest Management
+					input(type="text").span4.required
+				button(type="submit")#btn-login.btn.btn-primary
+					i.icon-lock.icon-white
+					| Submit Specifications
+				
+				
 
 
 block scripts
